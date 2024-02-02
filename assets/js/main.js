@@ -23,7 +23,7 @@ function game() {
             })
         });
 
-        resultElement.querySelector('button').addEventListener('click');
+        resultElement.querySelector('button').addEventListener('click', tryAgain);
     
     })
     
