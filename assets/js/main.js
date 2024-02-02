@@ -16,8 +16,8 @@ function game() {
         
     
         document.querySelectorAll('.user-chioce .game-card').forEach(card => {
-            card.addEventListener('click', (ev) => {
-                userChoice = getUserChoice(ev.target);
+            card.addEventListener('click', (event) => {
+                userChoice = getUserChoice(event.target);
                 computerChoice = getComputerChoice();
                 startGame();
             })
