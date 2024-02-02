@@ -11,63 +11,65 @@
 </head>
 
 <body>
-    <!-- Title Block -->
-    <section class="title-block">
-        <ul>
-            <li>Rock</li>
-            <li>Paper</li>
-            <li>Scissors</li>
-            <li>Lizard</li>
-            <li>Spock</li>
-        </ul>
-        <div class="score">
-            <div class="score-title">Score</div>
-            <div class="score-count">12</div>
-        </div>
-    </section>
+    <div class="flex-column main-container">
+        <!-- Title Block -->
+        <section class="title-block flex-row">
+            <ul>
+                <li>Rock</li>
+                <li>Paper</li>
+                <li>Scissors</li>
+                <li>Lizard</li>
+                <li>Spock</li>
+            </ul>
+            <div class="score flex-column">
+                <div class="score-title">Score</div>
+                <div class="score-count">12</div>
+            </div>
+        </section>
 
-    <!-- User Choice -->
+        <!-- User Choice -->
 
-    <section class="user-choice">
-        <div class="game-card scissors"><img src="assets/images/icon-scissors.svg" alt="Scissors"></div>
-        <div class="game-card paper"><img src="assets/images/icon-paper.svg" alt="Paper"></div>
-        <div class="game-card rock"><img src="assets/images/icon-rock.svg" alt="Rock"></div>
-        <div class="game-card lizard"><img src="assets/images/icon-lizard.svg" alt="Lizard"></div>
-        <div class="game-card spock"><img src="assets/images/icon-spock.svg" alt="Spock"></div>
-    </section>
+        <section class="user-choice">
+            <div class="game-card scissors"><img src="assets/images/icon-scissors.svg" alt="Scissors"></div>
+            <div class="game-card paper"><img src="assets/images/icon-paper.svg" alt="Paper"></div>
+            <div class="game-card rock"><img src="assets/images/icon-rock.svg" alt="Rock"></div>
+            <div class="game-card lizard"><img src="assets/images/icon-lizard.svg" alt="Lizard"></div>
+            <div class="game-card spock"><img src="assets/images/icon-spock.svg" alt="Spock"></div>
+        </section>
 
-    <!-- User Choice & Robot Choice -->
-    <div class="section picked hidden">
-        <div class="choice">
-            <p>You Picked</p>
-            <div class="user-pick">#</div>
+        <!-- User Choice & Robot Choice -->
+        <div class="section picked flex-row">
+            <div class="choice">
+                <p>You Picked</p>
+                <div class="user-pick">#</div>
+            </div>
+            <div class="result hidden">
+                <div class="title">You Lose!</div>
+                <button>Play Again!</button>
+            </div>
+            <div class="choice flex-column">
+                <p>The Robot Picked</p>
+                <div class="pc-pick"></div>
+            </div>
         </div>
-        <div class="result hidden">
-            <div class="title">You Lose!</div>
-            <button>Play Again!</button>
+
+        <button class="rules-btn">Rules</button>
+        <div class="modal-bg"></div>
+        <div class="modal">
+            <span class="close">
+                <img src="assets/images/icon-close.svg" alt="Close the rules pop-up">
+            </span>
+            <div class="title">Rules</div>
+            <div class="content">
+                <img src="assets/images/image-rules-bonus.svg" alt="The rules of the game">
+            </div>
         </div>
-        <div class="choice">
-            <p>The Robot Picked</p>
-            <div class="pc-pick"></div>
+
+        <div class="attribution">
+            Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+            Coded by <a href="https://github.com/ProfYaffle88">ProfYaffle88</a>.
         </div>
     </div>
-
-    <button class="rules-btn">Rules</button>
-    <div class="modal-bg"></div>
-    <div class="modal">
-        <span class="close">
-            <img src="assets/images/icon-close.svg" alt="Close the rules pop-up">
-        </span>
-        <title>Rules</title>
-        <div class="content">
-            <img src="assets/images/image-rules-bonus.svg" alt="The rules of the game">
-        </div>
-    </div>
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="https://github.com/ProfYaffle88">ProfYaffle88</a>.
-  </div>
 </body>
 
 </html>
