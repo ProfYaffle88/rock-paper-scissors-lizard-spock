@@ -9,6 +9,8 @@ function game() {
     const pcPickElement = document.querySelector('.pc-pick');
     const resultElement = document.querySelector('.result');
     const resultTitleElement = resultElement.querySelector('.title');
+    const scoreCountElement = document.querySelector('.score-count');
+    let currentScore = 0;
 
     window.addEventListener('load', () => {
         
@@ -51,8 +53,10 @@ function game() {
             resultTitleElement.innerText = 'Tie';
         } else if (getUserWinsStatus(user + computer)) {
             resultTitleElement.innerText = 'You Win!';
+            calculateScore(1);
         } else {
             resultTitleElement.innerText = 'You Lose!';
+            calculateScore(-1);
         }
     }
     function getUserWinsStatus(result) {
@@ -78,6 +82,40 @@ function game() {
     function clearResultBeforeAppend() {
         userPickElement.innerHTML = '';
         pickedElement.innerHTML = '';
+    }
+
+    function retrieveScoreFromLocalStorage() {
+        const score = +window.localStorage.getItem('gameScore') || 0;
+        currentScore = score;
+        updateScoreBoard();
+    }
+
+    function updateScoreBoard() {
+        scoreCountElement.innerText = currentScore;
+        window.localStorage.setItem('gameScore', currentScore);
+    }
+
+    //work with modal
+    const rulesBtn = document.querySelector('.rules-btn');
+    const modalBg = document.querySelector('.modal-bg');
+    const modal = document.querySelector('.modal');
+
+    rulesBtn.addEventListener('click', () => {
+        modal.classList.add('active');
+        modalBg.classList.add('active');
+    });
+
+    modalBg.addEventListener('click', (event) => {
+        if (event.target === modalBg) {
+            hideModal();
+        }
+    });
+
+    document.querySelector('.close').addEventListener('click', hideModal);
+
+    function hideModal() {
+        modal.classList.remove('active');
+        modalBg.classList.remove('active');  
     }
 }
 
