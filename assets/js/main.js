@@ -14,8 +14,9 @@ function game() {
 
     window.addEventListener('load', () => {
         
-    
-        document.querySelectorAll('.user-chioce .game-card').forEach(card => {
+        retrieveScoreFromLocalStorage();
+
+        document.querySelectorAll('.user-choice .game-card').forEach(card => {
             card.addEventListener('click', (event) => {
                 userChoice = getUserChoice(event.target);
                 computerChoice = getComputerChoice();
@@ -60,7 +61,7 @@ function game() {
         }
     }
     function getUserWinsStatus(result) {
-        return userWinResults.some(winStr => winStr ===  result)
+        return userWinResults.some(winStr => winStr ===  result);
     }
 
     function buildChoiceElement(isItUserElement, className) {
@@ -81,7 +82,12 @@ function game() {
 
     function clearResultBeforeAppend() {
         userPickElement.innerHTML = '';
-        pickedElement.innerHTML = '';
+        pcPickElement.innerHTML = '';
+    }
+
+    function calculateScore(roundResult) {
+        currentScore += roundResult;
+        updateScoreBoard();
     }
 
     function retrieveScoreFromLocalStorage() {
